@@ -1,0 +1,34 @@
+//body style
+body {
+	font-family: $font-family-sans-serif;
+}
+
+//custom button style
+.btn:hover,
+.btn:focus {
+	transform: translateY(-2px);
+	transition: transform 0.3s ease-in-out;
+	box-shadow: 0 7px 14px rgba(50, 50, 93, 0.56), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+.btn {
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.75), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+//custom checkbox style
+// YOU CAN PUT ALL RESOLUTION HERE
+// sm - DEFAULT, md, lg, xl
+.custom-switch.custom-switch-sm {
+    @include customCheckboxSize();
+}
+
+.custom-switch.custom-switch-md {
+    @include customCheckboxSize('md');
+}
+
+.custom-switch.custom-switch-lg {
+    @include customCheckboxSize('lg');
+}
+
+.custom-switch.custom-switch-xl {
+    @include customCheckboxSize('xl');
+}

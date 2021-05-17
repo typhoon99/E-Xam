@@ -1,0 +1,42 @@
+//mixin for transition
+@mixin transition($property, $time) {
+	transition: $property $time;
+}
+
+//mixin for custom checkbox sizing
+@mixin customCheckboxSize($res: 'sm') {
+    $index: 1rem;
+    $mainVal: 1rem;
+  
+    @if $res == 'md' {
+        $index: 2rem;
+        $mainVal: 1.5rem;
+    } @else if $res == 'lg' {
+        $index: 3rem;
+        $mainVal: 2rem;
+    } @else if $res == 'xl' {
+        $index: 4rem;
+        $mainVal: 2.5rem;
+    }
+
+    .custom-control-label {
+        padding-left: #{$index};
+        padding-bottom: #{$mainVal};
+    }
+
+    .custom-control-label::before {
+        height: $mainVal;
+        width: calc(#{$index} + 0.75rem);
+        border-radius: $mainVal * 2;
+    }
+
+    .custom-control-label::after {
+        width: calc(#{$mainVal} - 4px);
+        height: calc(#{$mainVal} - 4px);
+        border-radius: calc(#{$index} - (#{$mainVal} / 2));
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::after {
+        transform: translateX(calc(#{$mainVal} - 0.25rem));
+    }
+}
