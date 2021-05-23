@@ -1,0 +1,10 @@
+email-validator
+Flask
+Flask-Bcrypt
+Flask-Login
+Flask-Mail
+Flask-SQLAlchemy
+Flask-WTF
+Jinja2
+pygal
+flask-socketio

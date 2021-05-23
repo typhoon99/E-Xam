@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% block content%}
+<style>
+  .zoom {
+
+    transition: transform .2s;
+    /* Animation */
+  }
+
+  .zoom:hover {
+    transform: scale(1.2);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
+{% with messages = get_flashed_messages(with_categories = true ) %}
+{% if messages %}
+{% for category,message in messages %}
+<div style="margin-top: 60px;" class="alert alert-{{category}}">
+  <h3>{{message}}</h3>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="jumbotron" style="margin-top: 50px;">
+
+  <div class="jumbotron" style=" background-color:pink; ">
+    <h1>Welcome {{current_user.name}}!!</h1>
+    <h3>Have a good day teacher!</h3>
+
+
+  </div>
+  <div class="row">
+
+  </div>
+  <div class="row row-cols-1 row-cols-sm-3 row-cols-md-8" style="margin-top: 50px;margin-left:70px;">
+    <div class="col mb-1">
+
+
+      <div class="card" style="width: 18rem; height: 23rem;">
+        <div class="zoom">
+          <img src="https://t4.ftcdn.net/jpg/02/20/89/49/240_F_220894919_dHe2SOXAdnjI4nt8td3ot4ZhmEmE6WRa.jpg"
+            class="card-img-top" alt="..." style="width: 286px; height:190.66px;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Create Test</h5>
+          <p class="card-text">Create a new Quiz</p>
+          <div class="zoom">
+            <a href="{{url_for('teacher.create_new_quiz')}}" style="width: 15.25rem; margin-top:30px;" class="btn btn-danger">Create Test</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col mb-5">
+
+      <div class="card" style="width: 18rem; height: 23rem;">
+        <div class="zoom">
+          <img src="https://t3.ftcdn.net/jpg/03/06/14/50/240_F_306145094_fXSwGom0JWii8WKLqBMz5TL8G6X4EEPj.jpg"
+            class="card-img-top" alt="..." style="width: 286px; height:190.66px;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Activate Quizzes</h5>
+          <p class="card-text">Activate or Deactivate Current Quizzes</p>
+          <div class="zoom">
+            <a href="{{url_for('teacher.activate_quiz_list')}}" style="width: 15.25rem; margin-top:5px;" class="btn btn-danger">Activate/Deactivate</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="col mb-5">
+
+      <div class="card" style="width: 18rem; height: 23rem;">
+        <div class="zoom">
+          <img src="https://t4.ftcdn.net/jpg/03/32/93/91/240_F_332939130_xh4uVUk1lnxxaj6y3FHg2ivspzPEiSPW.jpg"
+            class="card-img-top" alt="..." style="width: 286px; height:190.66px;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">View Performance</h5>
+          <p class="card-text">Check how your class performed.</p>
+          <div class="zoom">
+
+            <a href="{{url_for('teacher.view_performance_list')}}" style="width: 15.25rem; margin-top:6px;" class="btn btn-danger">Check Result</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+</div>
+<footer class="page-footer blue text-center " style="padding: 15px; background-color:rgba(128, 128, 128, 0.199);">
+
+  <!--Footer Links-->
+  <div class="container-fluid" style="padding: 15px;">
+      <div class="row">
+
+          <!--First column-->
+          <div class="col-md-6">
+              <h5 class="title mb-3">PARiKSHA</h5>
+              <p>
+              PARiKSHA is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.
+                  
+              </p>
+          </div>
+          <!--/.First column-->
+
+          <!--Second column-->
+          <div class="col">
+              <h5 class="title">Contact Us</h5>
+              
+                  <li><a href="#">Mail</a></li>
+                  <p>pariksha.contact@gmail.com</p>
+                  <li><a href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a></li>
+                  
+                  
+              
+          </div>
+          <!--/.Second column-->
+      </div>
+  </div>
+ 
+</footer>
+
+
+{% endblock content %}
