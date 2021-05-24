@@ -1,9 +1,9 @@
 from flask import render_template,Blueprint,redirect,url_for,request,flash
 from flask_login import login_required,current_user,logout_user
-from pariksha import db
-from pariksha.student.utils import shuffle,random
-from pariksha.models import Student,Teacher,Quiz
-from pariksha.student.utils import bar_graph
+from server import db
+from server.student.utils import shuffle,random
+from server.models import Student,Teacher,Quiz
+from server.student.utils import bar_graph
 import copy
 
 

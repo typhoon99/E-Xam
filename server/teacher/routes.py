@@ -1,7 +1,7 @@
 from flask import render_template,Blueprint,flash,redirect,url_for,request,send_from_directory
 from flask_login import login_required,current_user,logout_user
-from pariksha.models import Quiz,Quiz_Questions,Student
-from pariksha import db
+from server.models import Quiz,Quiz_Questions,Student
+from server import db
 import datetime
 import csv
 import os
@@ -115,7 +115,7 @@ def view_performance(quiz_id):
         data.append(data_entry)
     data_exists = bool(len(data))
     if request.method == 'POST':
-        path = os.getcwd() + f'/pariksha/results/{quiz.title}_results.csv'
+        path = os.getcwd() + f'/server/results/{quiz.title}_results.csv'
         try:
             with open(path,'w',newline='',encoding='utf-8') as file:
                 field_names = list(data[0])

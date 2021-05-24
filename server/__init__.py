@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-from pariksha.config import Config
+from server.config import Config
 
 mail = Mail()
 bcrypt = Bcrypt()
@@ -26,13 +26,13 @@ def create_app(config_class = Config):
     bcrypt.init_app(app)
     db.init_app(app)
 
-    from pariksha.main.routes import main
-    from pariksha.auth.routes import auth
-    from pariksha.student.routes import student
-    from pariksha.teacher.routes import teacher
+    from server.main.routes import main
+    from server.auth.routes import auth
+    from server.student.routes import student
+    from server.teacher.routes import teacher
 
     #extra blueprint to be removed before production 
-    from pariksha.extra.routes import extra
+    from server.extra.routes import extra
     app.register_blueprint(extra)
 
 
