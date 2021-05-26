@@ -15,6 +15,31 @@
   .button2:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
+
+  .classImage{
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .clickText{
+    font-size: 15px;
+  }
+
+  .cardClass{
+    box-shadow: 0px 0px 5px 3px #a09e9e47;
+    border-radius: 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .cardClass:hover{
+    box-shadow: 0px 0px 7px 4px #9c9b9b67;
+    transition: 1s;
+
+  }
+
+  li{
+    list-style: none;
+  }
 </style>
 {% with messages = get_flashed_messages(with_categories = true ) %}
 {% if messages %}
@@ -25,69 +50,53 @@
 {% endfor %}
 {% endif %}
 {% endwith %}
-<div class="jumbotron" style="margin-top: 50px;  background-color:rgba(128, 128, 128, 0.199);">
+<div class="jumbotron" style="margin-top: 50px;background-color: white;">
 
-  <div class="jumbotron" style=" background-color:pink; ">
-    <h1>Welcome {{current_user.name}} !!</h1>
-    <h3><strong> Quote of the day</strong> : {{quotes[0]}}</h3>
+  <div class="jumbotron" style=" background-color:rgb(0 123 255 / 10%); ">
+    <h1 >Welcome {{current_user.name}} !!</h1>
+    <h4 class="my-3"><strong> Quote of the day</strong> : {{quotes[0]}}</h4>
 
 
   </div>
-  <div class="row">
-
-  </div>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" style="margin-top: 50px;;">
-    <div class="col mb-1">
-
-
-      <div class="card" style="width: 18rem; height: 23rem;">
-        <div class="zoom">
+  
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 mx-5" style="margin-top: 50px;">
+    <div class="col mb-1 mx-auto">
+      <div class="card cardClass " style="width: 18rem; height: 23rem;">
           <img src="https://t3.ftcdn.net/jpg/02/34/37/84/240_F_234378496_LK9HJn2cdCq1zSKr19c8NwqDYgy2ouHz.jpg"
-            class="card-img-top" alt="...">
-        </div>
+            class="card-img-top classImage" alt="...">
         <div class="card-body">
           <h5 class="card-title">Attempt Quiz</h5>
-          <p class="card-text">Click on the button below to view all active quizzes</p>
-          <div class="zoom">
+          <div class="card-text clickText">Click on the button below to view all active quizzes</div>
+          <div class="my-3">
             <a href="{{url_for('student.list_quiz')}}" style="width: 15.25rem; margin-top:5px;"
-              class="btn btn-danger">Attemp Quiz</a>
+              class="btn btn-primary">Attemp Quiz</a>
           </div>
         </div>
       </div>
 
     </div>
     <div class="col mb-4">
-
-      <div class="card" style="width: 18rem; height: 23rem;">
-        <div class="zoom">
+      <div class="card cardClass " style="width: 18rem; height: 23rem;">
           <img src="https://t3.ftcdn.net/jpg/03/78/17/94/240_F_378179426_fanID4R9NLWcuenQSwio4f3mttmvUJfz.jpg"
-            class="card-img-top" alt="...">
-        </div>
+            class="card-img-top classImage" alt="...">
         <div class="card-body">
           <h5 class="card-title">View Result</h5>
-          <p class="card-text">View your marks</p>
-          <div class="zoom">
-            <a href="{{url_for('student.view_result')}}" style="width: 15.25rem; margin-top:30px;" class="btn btn-danger">View Result</a>
-          </div>
+          <p class="card-text clickText">View your marks</p>
+            <a href="{{url_for('student.view_result')}}" style="width: 15.25rem; margin-top:30px;" class="btn btn-primary">View Result</a>
         </div>
       </div>
 
     </div>
     <div class="col mb-4">
 
-      <div class="card" style="width: 18rem; height: 23rem;">
-        <div class="zoom">
+      <div class="card cardClass" style="width: 18rem; height: 23rem;">
           <img src="https://t3.ftcdn.net/jpg/03/22/02/90/240_F_322029005_GPIGKrc2R9zzcU2foU1GkbIucma54J0B.jpg"
-            class="card-img-top" alt="...">
-        </div>
+            class="card-img-top classImage" alt="...">
         <div class="card-body">
           <h5 class="card-title">Add Teacher</h5>
-          <p class="card-text">Add teacher so to get access to the exams created by them</p>
-          <div class="zoom">
-
+          <p class="card-text clickText">Add teacher so to get access to the exams created by them</p>
             <a href="{{url_for('student.add_teacher')}}" style="width: 15.25rem; margin-top:15px;"
-              class="btn btn-danger">Add Teacher</a>
-          </div>
+              class="btn btn-primary">Add Teacher</a>
         </div>
       </div>
 
@@ -96,18 +105,13 @@
     </div>
     <div class="col mb-4">
 
-      <div class="card" style="width: 18rem; height: 23rem;">
-        <div class="zoom">
+      <div class="card cardClass" style="width: 18rem; height: 23rem;">
           <img src="https://t4.ftcdn.net/jpg/02/90/44/61/240_F_290446151_BE5PueHXw3wAYvxxwcXIDwTxgrl6mRsn.jpg"
-            class="card-img-top" alt="..." style="width: 286px; height:190.66px;">
-        </div>
+            class="card-img-top classImage" alt="..." style="width: 286px; height:190.66px;">
         <div class="card-body">
           <h5 class="card-title">View Performance</h5>
-          <p class="card-text">Check your performance with respect to others who attepted the same quiz</p>
-          <div class="zoom">
-
-            <a href="{{url_for('student.view_performance')}}" style="width: 15.25rem; margin-top:-20px;" class="btn btn-danger">Check Result</a>
-          </div>
+          <p class="card-text clickText">Check your performance with respect to others who attepted the same quiz</p>
+            <a href="{{url_for('student.view_performance')}}" style="width: 15.25rem; margin-top:-20px;" class="btn btn-primary">Check Result</a>
         </div>
       </div>
 
@@ -118,16 +122,16 @@
     </div>
   </div>
 </div>
-<footer class="page-footer blue text-center " style="padding: 15px; background-color:rgba(128, 128, 128, 0.199);">
+<footer class="page-footer blue text-center " style="padding: 15px; background-color:#140538;">
 
   <!--Footer Links-->
   <div class="container-fluid" style="padding: 15px;">
     <div class="row">
 
       <!--First column-->
-      <div class="col-md-6">
+      <div class="col-md-7 text-light mx-auto my-3">
         <h5 class="title mb-3">PARiKSHA</h5>
-        <p>
+        <p class="px-5 mx-5">
           PARiKSHA is created with a motive of providing a unified platform to students and teachers so that the process
           of learning and its quality does not reduces in these tough times.
 
@@ -136,17 +140,15 @@
       <!--/.First column-->
 
       <!--Second column-->
-      <div class="col">
-        <h5 class="title">Contact Us</h5>
-
-        <li><a href="#">Mail</a></li>
-        <p>pariksha.contact@gmail.com</p>
-        <li><a
-            href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
-        </li>
-
-
-
+      <div class="col text-light my-3">
+          <h5 class="title text-light ">Contact Us: 12345667</h5>
+          <div class="d-flex justify-content-center">
+            <li><a class=" text-light" href="#">Mail:</a></li>
+            <p class="mx-1">pariksha.contact@gmail.com</p>
+          </div>
+          <li><a class=" text-light"
+              href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
+          </li>
       </div>
       <!--/.Second column-->
     </div>

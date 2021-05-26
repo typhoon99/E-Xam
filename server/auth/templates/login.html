@@ -160,19 +160,41 @@
         text-decoration: none;
       }
     
+      .loginCard{
+        background-color: #f7fafc;
+        margin-top:150px;
+        margin-bottom:150px;
+        padding:2rem;
+        /* box-shadow: 0px 0px 2px 3px rgba(211, 210, 210, 0.288); */
+        border: 1px solid #e8e9e9;
+      }
+
+      .loginFormControl{
+          border: none!important;
+          box-shadow:0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%)
+      }
+
+      .loginFormControl:focus,.loginFormControl:hover
+      {
+          border: none!important;
+          box-shadow:0 1px 4px rgb(50 50 93 / 25%), 0 2px 0 rgb(0 0 0 / 5%)
+      }
+      .loginFormGroup{
+          font-size: 1rem;
+      }
 </style>
 <div>
 
     <div class="container">
 
-        <div class="col-md-6 offset-md-3" style="margin-top:150px;margin-bottom:150px;">
-            <div class="content-section">
+        <div class="col-md-6 offset-md-3 card loginCard" >
+            <div class="content-section ">
                 <form method="POST" , action="">
                     {{ form.hidden_tag() }}
                     <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Log In</legend>
+                        <legend class="mb-4">Log In</legend>
 
-                        <div class="form-group">
+                        <div class="form-group loginFormGroup text-muted">
                             {{ form.email.label(class="form-control-label") }}
 
                             {% if form.email.errors %}
@@ -183,11 +205,11 @@
                                 {% endfor %}
                             </div>
                             {% else %}
-                            {{ form.email(class="form-control form-control-lg") }}
+                            {{ form.email(class="form-control loginFormControl form-control-lg") }}
                             {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group loginFormGroup text-muted">
                             {{ form.password.label(class="form-control-label") }}
                             {% if form.password.errors %}
                             {{ form.password(class="form-control form-control-lg is-invalid") }}
@@ -197,23 +219,26 @@
                                 {% endfor %}
                             </div>
                             {% else %}
-                            {{ form.password(class="form-control form-control-lg") }}
+                            {{ form.password(class="form-control loginFormControl form-control-lg") }}
                             {% endif %}
                         </div>
                     </fieldset>
-                    <div>
-                        {{ form.submit(class="btn btn-outline-primary")}}
+                    <div class="row ">
+                      <div class="col-lg-6 justify-content-start">
+                        {{ form.submit(class="btn btn-primary")}}
+                      </div>
+                    
+                    <div class="col-lg-6 mt-2">
+                        <h6 class="text-muted float-lg-right">
+                            <a class="text-muted" href="{{ url_for('auth.request_reset')}}">Forgot Password?</a>
+                        </h6>
                     </div>
-                    <div class="mt-2">
-                        <small class="text-muted ml-2 ">
-                            <a href="{{ url_for('auth.request_reset')}}">Forgot Password?</a>
-                        </small>
-                    </div>
+                  </div>
                 </form>
-                <div class="border-top pt-3">
-                    <small class="text-muted">
+                <div class="pt-3">
+                    <h6 class="text-muted">
                         Don't have an account yet? <a class="ml-2" href="{{ url_for('auth.register')}}">Sign Up</a>
-                    </small>
+                    </h6>
                 </div>
             </div>
         </div>
