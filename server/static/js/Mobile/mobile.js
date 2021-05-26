@@ -36,7 +36,7 @@ async function predict() {
     // {
     //   alert("Cheating")
     // }
-    console.log(predictionText);
+    // console.log(predictionText);
     predictedClass.dispose();
     await tf.nextFrame();
   }
@@ -45,7 +45,7 @@ async function predict() {
 function startPredicting() {
   console.log("Mobile predict");
   isPredicting = true;
-  await predict();
+  predict();
 }
 
 function stopPredicting() {
@@ -53,11 +53,11 @@ function stopPredicting() {
   predict();
 }
 
-async function init() { 
-  await webcam.setup();
-  console.log("STEP 1 SUCCESS");
-  mobilenet = await loadMobilenet();
-  tf.tidy(() => mobilenet.predict(webcam.capture()));
+async function init_mobile() {
+	await webcam.setup();
+	console.log("STEP 1 SUCCESS");
+	mobilenet = await loadMobilenet();
+	tf.tidy(() => mobilenet.predict(webcam.capture()));
 }
 
-init();
+init_mobile();
