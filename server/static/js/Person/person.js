@@ -46,12 +46,10 @@ function stopPredicting2(){
 	predict2();
 }
 
-async function init(){
+async function init_person(){
 	await webcam2.setup();
 	personnet = await loadPersonnet();
 	tf.tidy(() => personnet.predict(webcam2.capture()));	
 }
 
-init();
-
-startPredicting2();
+init_person();
