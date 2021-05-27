@@ -1,3 +1,18 @@
+<style>
+    @media (max-width:767.99px)
+    {
+        .teacherContainer{
+            width: 100%!important;
+        }
+    }
+    @media (min-width:768.99px)
+    {
+        .teacherContainer{
+            width: 75%!important;
+        }
+    }
+</style>
+
 {% extends "layout.html" %}
 {% block content%}
 
@@ -12,24 +27,23 @@
         {% endif %}
   {% endwith %}
 <div class="jumbotron" style="margin-top: 50px;  height: 100%;
-
-
+background-color: white;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-padding:70px;">
+">
 
-    <div class="col" style="padding: px;">
+    <div class="col">
 
-        <div class="container" style="background-color:white; border-radius:30px; margin-top:50px; margin-bottom: 250px;">
-            <h2 style="text-align: center;"><strong>ADD TEACHER</strong></h2>
-            <h4 style="text-align: center;">Enter the unique ID of your teacher to be able to access the quizzes created by them</h4>
+        <div class="container teacherContainer" style="padding:2rem 3rem ;background-color:white; border-radius:30px; margin-top:20px; margin-bottom: 20px; box-shadow:0px 0px 5px 2px #5a59592e;">
+            <h2 class="mb-3"><strong>ADD TEACHER</strong></h2>
+            <h5 class="">Enter the unique ID of your teacher to be able to access the quizzes created by them</h5>
 
-            <hr style="width:100%;text-align:left;margin-left:0">
+            <!-- <hr style="width:100%;text-align:left;margin-left:0"> -->
 
             <form method="POST">
 
-                <div class="container" style="padding:20px;">
+                <div class="container my-4 mx-0 px-0">
                     <label for="basic-ul">Enter the teacher id </label>
                     <div class="input-group ">
                         
@@ -37,8 +51,8 @@ padding:70px;">
                         aria-describedby="basic-addon3" placeholder="Enter the Id here ">
                     </div>
                 </div>
-                <div class="row justify-content-center" style="margin-top: 20px; color:blue; padding:20px;">
-                    <button class="btn btn-primary btn-lg " type="submit">Submit</button>
+                <div class="row" style="color:blue; padding:0px 20px ;">
+                    <button class="btn btn-primary " type="submit">Add Teacher</button>
                 </div>
             </form>
 
