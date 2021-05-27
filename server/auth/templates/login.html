@@ -161,12 +161,10 @@
       }
     
       .loginCard{
-        background-color: #f7fafc;
-        margin-top:150px;
-        margin-bottom:150px;
-        padding:2rem;
-        /* box-shadow: 0px 0px 2px 3px rgba(211, 210, 210, 0.288); */
+        margin: 0rem 3rem;
+        box-shadow: 0px 0px 2px 3px rgba(211, 210, 210, 0.288);
         border: 1px solid #e8e9e9;
+        border-radius: 1rem;
       }
 
       .loginFormControl{
@@ -182,66 +180,100 @@
       .loginFormGroup{
           font-size: 1rem;
       }
+
+      .loginImage{
+        width: 25rem;
+        height: 25rem;
+      }
+      .loginContainer{
+        margin: 6rem 2rem 2rem 2rem;
+      }
+
+      .login{
+        width: 30rem;
+        border: none;
+        padding: 2rem;
+        background-color: rgb(194 183 255 / 35%);
+      }
+
+      @media (max-width:767.99px) {
+        .login{
+        width: 20rem;
+      }
+      }
+
+
 </style>
 <div>
 
-    <div class="container">
-
-        <div class="col-md-6 offset-md-3 card loginCard" >
-            <div class="content-section ">
-                <form method="POST" , action="">
-                    {{ form.hidden_tag() }}
-                    <fieldset class="form-group">
-                        <legend class="mb-4">Log In</legend>
-
-                        <div class="form-group loginFormGroup text-muted">
-                            {{ form.email.label(class="form-control-label") }}
-
-                            {% if form.email.errors %}
-                            {{ form.email(class="form-control form-control-lg is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                                {% endfor %}
+    <div class="container loginContainer">
+         <div class="row justify-content-center">
+           <div class="loginCard d-lg-flex  ">
+            <div class="card mx-auto my-2 my-lg-0 login col-lg-6 m-0 order-xs-last order-lg-first">
+              <!-- <div class="card " > -->
+                <div class="content-section ">
+                    <form method="POST" , action="">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                            <legend class="mb-4">Log In</legend>
+    
+                            <div class="form-group loginFormGroup text-muted">
+                                {{ form.email.label(class="form-control-label") }}
+    
+                                {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.email(class="form-control loginFormControl form-control-lg") }}
+                                {% endif %}
                             </div>
-                            {% else %}
-                            {{ form.email(class="form-control loginFormControl form-control-lg") }}
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group loginFormGroup text-muted">
-                            {{ form.password.label(class="form-control-label") }}
-                            {% if form.password.errors %}
-                            {{ form.password(class="form-control form-control-lg is-invalid") }}
-                            <div class="invalid-feedback">
-                                {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                                {% endfor %}
+    
+                            <div class="form-group loginFormGroup text-muted">
+                                {{ form.password.label(class="form-control-label") }}
+                                {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.password(class="form-control loginFormControl form-control-lg") }}
+                                {% endif %}
                             </div>
-                            {% else %}
-                            {{ form.password(class="form-control loginFormControl form-control-lg") }}
-                            {% endif %}
+                        </fieldset>
+                        <div class="row ">
+                          <div class="col-lg-6 justify-content-start">
+                            {{ form.submit(class="btn btn-primary")}}
+                          </div>
+                        
+                        <div class="col-lg-6 mt-2">
+                            <h6 class="text-muted float-lg-right">
+                                <a class="text-muted" href="{{ url_for('auth.request_reset')}}">Forgot Password?</a>
+                            </h6>
                         </div>
-                    </fieldset>
-                    <div class="row ">
-                      <div class="col-lg-6 justify-content-start">
-                        {{ form.submit(class="btn btn-primary")}}
                       </div>
-                    
-                    <div class="col-lg-6 mt-2">
-                        <h6 class="text-muted float-lg-right">
-                            <a class="text-muted" href="{{ url_for('auth.request_reset')}}">Forgot Password?</a>
+                    </form>
+                    <div class="pt-3">
+                        <h6 class="text-muted">
+                            Don't have an account yet? <a class="ml-2" href="{{ url_for('auth.register')}}">Sign Up</a>
                         </h6>
                     </div>
-                  </div>
-                </form>
-                <div class="pt-3">
-                    <h6 class="text-muted">
-                        Don't have an account yet? <a class="ml-2" href="{{ url_for('auth.register')}}">Sign Up</a>
-                    </h6>
                 </div>
             </div>
-        </div>
+            <!-- </div> -->
+            <div class="col-lg-6 order-xs-first order-lg-last">
+              <img class="loginImage" src="https://image.freepik.com/free-vector/sign-page-abstract-concept-illustration-enter-application-mobile-screen-user-login-form-website-page-interface-ui-new-profile-registration-email-account_335657-936.jpg" alt="">
+            </div>
+     
+           </div>
+            
+         </div>
+     
     </div>
 </div>
 
@@ -252,13 +284,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Pariksha</h3>
+            <h3>E-xam</h3>
             <p>
               Bennett University <br>
               Greater Noide, 201010<br>
               India<br><br>
               
-              <strong>Email:</strong> PARiKSHA@gmail.com<br>
+              <strong>Email:</strong> E-xam@gmail.com<br>
             </p>
           </div>
 
@@ -287,9 +319,9 @@
           </div>
           
            <div class="col-lg-4 col-md-6">
-            <h2>PARiKSHA</h2>
+            <h2>E-xam</h2>
             <h4><p>
-                Pariksha is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.
+                E-xam is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.
               </p>
             </h4>
             </p>
