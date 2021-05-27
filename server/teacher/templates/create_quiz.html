@@ -1,3 +1,9 @@
+<style>
+   li{
+    list-style-type: none;
+   }
+</style>
+
 {% extends "layout.html" %}
 {% block content%}
 
@@ -20,15 +26,15 @@
 </head>
 
 <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog ">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-light px-5 py-3">
                 <h5 class="modal-title">Some Instructions before you go on!!!</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <li>Enter the correct answer in the first text area option</li>
-                <li>The options would be shuffled for all the students</li>
+            <div class="modal-body p-4">
+                <li class="my-2 text-muted">Enter the correct answer in the first text area option</li>
+                <li class="my-2 text-muted">The options would be shuffled for all the students</li>
     
             </div>
         </div>
@@ -86,6 +92,31 @@
     #img-upload {
         width: 100%;
     }
+
+    .inputCreateQuiz{
+        outline: none!important;
+        border: none!important;
+        width: 100%;
+    }
+    .inputFormControl{
+        border-radius:0.5rem;
+        box-shadow:0px 1px 3px 2px #dad4d421;
+    }
+
+    .questionInput{
+        border: none;
+    }
+
+    .questionInput:focus{
+        box-shadow: none!important;
+    }
+
+    .setAns{
+        /* border: 1px solid rgb(209, 206, 206); */
+        padding: 1rem;
+        box-shadow: 0px 0px 3px 2px rgb(184 182 182 / 28%);
+        border-radius: 0.5rem;
+    }
 </style>
 <div class="jumbotron" style="margin-top: 50px; background-color:white; height: 100%;
 
@@ -97,58 +128,30 @@ padding:70px;">
 
     {% set index = 1 %}
     <form method="POST">
-        <div class="container" style=" background:pink; color:black; padding:50px; border-radius:30px;">
+        <div class="container" style=" background-color:rgb(0 123 255 / 10%); box-shadow: 0px 0px 4px 2px #d8e3ef; color:rgb(43, 42, 42); padding:50px; border-radius:30px;">
 
-            <h2>
+            <h3 class="mb-4">
                 Add all the questions here that you want to see in your <strong>Quiz</strong>
-            </h2>
-            <hr style="width:100%;text-align:left;margin-left:0">
-            <hr style="width:100%;text-align:left;margin-left:0">
+            </h3>
 
-            <!--<div class="input-group mb-3">
-            <div class="input-group-prepend">
-                
-                <span class="input-group-text" id="Quiztitle-addon1">Question No.</span>
-            </div>
-
-            <textarea id="Quiz_title" name="title" rows="1" cols="50" style="border-radius: 5px; border:double;"
-                aria-label="Question" placeholder="Enter the quiz title"></textarea>
-
-        </div>-->
-
-            <div class="input-group mb-3">
-                <h4 style="margin-top:7px;">Quiz Title</h4>
-                <input type="text" class="form-control" name="title" id="Quiz_title" placeholder="Enter Quiz Title"
+            <div class="input-group mb-3 form-control inputFormControl">
+                <input type="text" class="inputCreateQuiz" name="title" id="Quiz_title" placeholder="Enter Quiz Title"
                     aria-describedby="basic-addon3" required>
             </div>
 
-            <!--
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              
-                <span class="input-group-text" id="Start_date-addon1">Start Date</span>
-            </div>
-            <input type="date">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-            
-                <span class="input-group-text" id="End_date-addon1">Start Date</span>
-            </div>
-            <input type="datetime-local" value="2000-01-01T00:00:00" />
-        </div>-->
-
             <div class="input-group">
-                <div class="container">
-                    <div class="row">
-                        <div class="input-group-prepend" style="margin-left: 5px;">
+                <div class="container mx-0 mt-3">
+                  
+                        <div class="input-group-prepend row" >
                             <!-- ############################## start date tag V-->
-                            <h5 style="margin-top:3px; padding:5px;">Start Date :</h5>
+                            <h6 style="margin-top:3px;" class="col-md-2">Start Date :</h6>
+                            <input type="date" class="form-control inputFormControl col-md-10" name='start_time' required>
                         </div>
-                        <input type="date" name='start_time' required>
-                        <h5 style="margin-left: 15px; margin-top:3px; padding:5px;">End Date :</h5>
-                        <input type="date" name='end_time' required>
-                    </div>
+                        <div class="input-group-prepend row my-3" >
+                        <h6 style=" margin-top:3px;" class="col-md-2">End Date :</h6>
+                        <input type="date" class="form-control inputFormControl col-md-10" name='end_time' required>
+                        </div>
+                    
                 </div>
             </div>
 
@@ -163,63 +166,28 @@ padding:70px;">
         <div>
 
             <!-- <==========Start Cloning from here-->
-            <div class="container"
-                style="background-color:whitesmoke; color:black; padding:20px; border-radius:30px; margin-top:50px; padding:15px;"
+            <div class="container mt-5"
+               
                 id="form_instance1">
                 <div style="padding: 10px;">
 
-
-
-                    <div class="card" style="background-color:rebeccapurple; border-radius:10px;">
-                        <div class="card-header" id="headingOne" style="color:#e43c5c;">
+                    <div class="card my-3" >
+                        <div class="card-header" id="headingOne">
                             <h3 class="mb-0">
-
-                                
                                 Question
-
                             </h3>
                         </div>
-                        
-
-
-                        <!--<textarea id="QuesIn" name="Question1" rows="3" cols="109"
-                            style="border-radius: 5px; border:double;" aria-label="Question"
-                            placeholder="Enter Your Your Question Here" class='mt-2'></textarea>-->
-
-
-                        <input type="text" class="form-control" name="Question1" id="QuesIn"
+                       <input type="text" class="form-control questionInput" name="Question1" id="QuesIn"
                             placeholder="Enter Question" aria-describedby="basic-addon3" required>
-
                     </div>
 
-                    <hr>
-
-                    <div class="container">
-                        <div class="col-md-6">
-                            <!-- <div class="form-group">
-                                <label>Choose an image to use in your <strong>Quiz</strong></label>
-                                <div class="input-group">
-                                    <span class="input-group-btn">
-                                        <span class="btn btn-default btn-file" style="background-color: #dc3545;">
-                                            Browse… <input name="photo-url1" type="file" name = "photo_url" id="imgInp">
-                                        </span>
-                                    </span>
-                                    <input type="text" class="form-control" readonly>
-                                </div>
-                                <img id='' />
-                            </div> -->
-                        </div>
-                    </div>
-
-                    <div class="col" style="border-style:solid; padding:10px;">
-
-
+                    <div class="setAns" >
                         <div class="form-group row">
                             <label for="Option A" class="col-sm-2 col-form-label" style=" margin-top:10px;">For
                                 Option
                                 A</label>
                             <div class="col-sm-9">
-                                <div style="padding: 0px; margin-left:-50px; margin-top:10px;">
+                                <div style="padding: 0px; margin-top:10px;">
                                     <div class="input-group">
                                         <input type="text" name="Option1A" class="form-control"
                                             aria-label="Text input with radio button" id="OptionA"
@@ -233,7 +201,7 @@ padding:70px;">
                             <label for="Option B" class="col-sm-2 col-form-label">For Option
                                 B</label>
                             <div class="col-sm-9">
-                                <div style="padding: 0px; margin-left:-50px;">
+                                <div style="padding: 0px; ">
                                     <div class="input-group">
 
                                         <input type="text" name="Option1B" class="form-control"
@@ -248,7 +216,7 @@ padding:70px;">
                             <label for="Option C" class="col-sm-2 col-form-label">For Option
                                 C</label>
                             <div class="col-sm-9">
-                                <div style="padding: 0px; margin-left:-50px;">
+                                <div style="padding: 0px;">
                                     <div class="input-group">
 
                                         <input type="text" name="Option1C" class="form-control"
@@ -263,9 +231,8 @@ padding:70px;">
                             <label for="Option D" class="col-sm-2 col-form-label">For Option
                                 D</label>
                             <div class="col-sm-9">
-                                <div style="padding: 0px; margin-left:-50px;">
+                                <div style="padding: 0px;">
                                     <div class="input-group">
-
                                         <input type="text" name="Option1D" class="form-control"
                                             aria-label="Text input with radio button" id="OptionD"
                                             placeholder="Enter Option value" required>
@@ -274,21 +241,19 @@ padding:70px;">
                             </div>
                         </div>
                         <div class="input-group-prepend" style="margin-left: 0px;">
-                            <!--############################### V enter marks tag-->
                             <span class="input-group-text" id="Enter_Marks-addon1"
-                                style="border-top-left-radius: 10px; border-bottom-left-radius:10px;">Enter marks
+                                style="background-color:#cacaca29; border-top-left-radius: 10px; border-bottom-left-radius:10px;">Enter marks
                                 for question</span>
                             <input type="number" min=1
                                 style="width: 50px; border-top-right-radius: 10px; border-bottom-right-radius:10px;"
                                 name="Marks1" id="Marks"  required />
-
                         </div>
 
 
 
-
                     </div>
-                </div>
+                      
+
             </div>
         </div>
 
@@ -296,27 +261,66 @@ padding:70px;">
 
 
 
-        <div class="row justify-content-end">
+        <div class="row justify-content-end mr-4">
 
-            <a class="btn btn-info btn-lg" id="clone_btn">
-                <span class="glyphicon glyphicon-plus-sign"></span> Add another question
+            <a class="btn btn-primary btn-sm text-light" id="clone_btn">
+                <i class="fa fa-plus-circle"></i> Add another question
             </a>
 
 
         </div>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <hr style="height:1px;border-width:0;;background-color:rgb(196 194 194 / 52%)">
         <!-- <==== Clone till here-->
         <div class="row justify-content-center">
             <div class="example hoverable">
-                <input type="submit" value="Submit" class="btn btn-danger"
-                    style="width: 150px; margin-top:10px; background-color:#e43c5c; ">
+                <input type="submit" value="Submit" class="btn btn-primary"
+                    style="width: 150px; margin-top:10px;">
             </div>
         </div>
     </form><!-- <======= Form tag end ========>-->
 </div>
 
 
-<<script>
+<footer class="page-footer blue text-center " style="margin-top:80px;background-color:rgba(128, 128, 128, 0.199);">
+
+    <!--Footer Links-->
+    <div class="container-fluid" style="padding: 15px;">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="title mb-3">PARiKSHA</h5>
+                <p>
+                    PARiKSHA is created with a motive of providing a unified platform to students and teachers
+                    so that
+                    the process of learning and its quality does not reduces in these tough times.
+
+                </p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col">
+                <h5 class="title">Contact Us</h5>
+
+                <li><a href="#">Mail</a></li>
+                <p>pariksha.contact@gmail.com</p>
+                <li><a
+                        href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
+                </li>
+
+
+
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+
+</footer>
+
+
+
+<script>
 
     $(document).ready(function () {
     $(document).on('change', '.btn-file :file', function () {
@@ -376,41 +380,5 @@ padding:70px;">
     </script>
 
 
-    <footer class="page-footer blue text-center " style="margin-top:80px;background-color:rgba(128, 128, 128, 0.199);">
-
-        <!--Footer Links-->
-        <div class="container-fluid" style="padding: 15px;">
-            <div class="row">
-
-                <!--First column-->
-                <div class="col-md-6">
-                    <h5 class="title mb-3">PARiKSHA</h5>
-                    <p>
-                        PARiKSHA is created with a motive of providing a unified platform to students and teachers
-                        so that
-                        the process of learning and its quality does not reduces in these tough times.
-
-                    </p>
-                </div>
-                <!--/.First column-->
-
-                <!--Second column-->
-                <div class="col">
-                    <h5 class="title">Contact Us</h5>
-
-                    <li><a href="#">Mail</a></li>
-                    <p>pariksha.contact@gmail.com</p>
-                    <li><a
-                            href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
-                    </li>
-
-
-
-                </div>
-                <!--/.Second column-->
-            </div>
-        </div>
-
-    </footer>
-
+   
     {% endblock content %}

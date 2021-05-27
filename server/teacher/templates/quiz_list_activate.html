@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content%}
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <style>
   .zoom {
 
@@ -23,11 +24,15 @@
   .po:hover {
     background-color: cyan;
   }
+
+  .toolbar{
+  display: none!important;
+  }
 </style>
 
 <div class="jumbotron" style="margin-top: 50px; background-color:white;">
 
-  <div class="jumbotron" style=" background-color:pink; ">
+  <div class="jumbotron" style=" background-color:rgb(0 123 255 / 10%); box-shadow: 0px 0px 4px 2px #d8e3ef;">
     <!--the Pink box with border-->
 
     <!--<div class="jumbotron" style=" background-color:pink; border-radius:black solid;">-->
@@ -42,11 +47,16 @@
 
 
   <div class="jumbotron" style="background-color: white;  ">
+    <div class="d-flex justify-content-center" style="height: 15rem;
+    margin-top: -6rem;
+">
+      <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_46kycmnm.json"  background="transparent"  speed="1"  style="width: 20rem; height: 20rem;"  loop  autoplay></lottie-player>
+    </div>
     <div class="d-flex justify-content-center">
       <h1>No Quizzes Created</h1>
     </div>
     <div class="d-flex justify-content-center">
-      <h3><a class="form-link" href="{{url_for('teacher.create_new_quiz')}}">Create Your First Quiz...</a><h3>
+      <h3><a class="form-link text-info" href="{{url_for('teacher.create_new_quiz')}}">Create Your First Quiz...</a><h3>
     </div>
   </div>
   <hr style="width:100%;text-align:left;margin-left:0; width:10px;">
