@@ -26,15 +26,15 @@
   }
 
   .cardClass{
-    box-shadow: 0px 0px 5px 3px #a09e9e47;
+    box-shadow: 0px 3px 5px 3px #a09e9e47;
     border-radius: 1rem;
     margin-top: 0.8rem;
   }
 
   .cardClass:hover{
-    box-shadow: 0px 0px 7px 4px #9c9b9b67;
-    transition: 1s;
-
+    box-shadow: 0px 4px 7px 1px #a09e9e61;
+    transform: translateY(-5px);
+	transition: transform 0.3s ease-in-out;
   }
 
   li{
@@ -52,7 +52,7 @@
 {% endwith %}
 <div class="jumbotron" style="margin-top: 50px;background-color: white;">
 
-  <div class="jumbotron" style=" background-color:rgb(0 123 255 / 10%); ">
+  <div class="jumbotron" style=" background-color:rgb(0 123 255 / 10%); box-shadow: 0px 0px 4px 2px #d8e3ef;">
     <h1 >Welcome {{current_user.name}} !!</h1>
     <h4 class="my-3"><strong> Quote of the day</strong> : {{quotes[0]}}</h4>
 
