@@ -54,7 +54,7 @@
         background-color: rgb(7, 182, 7);
     }
 
-    .choose {
+    /* .choose {
         margin: 0;
         padding: 0;
         position: relative;
@@ -86,7 +86,7 @@
         border-radius: 50%;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         transition: .5s;
-        font-size: 24px;
+        font-size:0.5rem;
         color: #262626;
     }
 
@@ -102,7 +102,6 @@
 
     .choose #male .fas {
         display: block;
-        line-height: 10px;
         border-radius: 50%;
     }
 
@@ -114,8 +113,8 @@
 
     .choose #male .fas:hover {
         animation: manimate 7s;
-    }
-
+    } */
+/* 
     @keyframes manimate {
         0% {
             box-shadow: 0 0 0 0 rgb(90, 168, 217)
@@ -158,17 +157,62 @@
         100% {
             box-shadow: 0 0 0 50px rgba(255, 109, 74, 0)
         }
+    } */
+
+    .cameraBox{
+            height: 8rem;
+            width: 8rem;
+            margin: 10px;
+    }
+
+    .questionJumbo{
+    width: 70%;
+      padding:10px;
+      background-color: rgb(241 241 241 / 26%);
+    box-shadow: 0px 0px 4px 2px #e2e2e263;
+    border: 1px solid #ececec99;
+    }
+
+    @media (max-width: 575.98px) {
+        .questionJumbo{
+            width: 100%;
+        }
+    }
+
+    .ansText{
+        font-size: 0.8rem;
+        margin-left: 30px!important;
+        font-size: 1rem;
+    }
+
+    .checkInput{
+        width: 1rem!important;
+        height: 1rem!important;
+    }
+
+    .custom-control {
+        margin-top: 0px!important;
+       padding-left: 0.5rem;
+    }
+
+    .ansBox{
+        padding:0px 8px 8px 8px;
+
+    }
+
+    .submitBtn{
+        font-size: 1.2rem;
     }
 </style>
 <div class="camera-view" id="dragme" draggable="true">
-    <video autoplay playsinline muted id="wc" width="984" height="216"></video>
+    <video autoplay playsinline muted id="wc" class="cameraBox"></video>
     <div id="prediction1"></div>
     <!-- <button type="button"> U HE</button> -->
     <div id="prediction2"></div>
 </div>
 <div class="jumbotron" style="background-color:white; ">
     <div class='jumbotron'
-        style="background-color:pink; border-radius:20px; margin-top:30px; margin-left:20px; margin-right:20px;  ">
+        style="background-color:rgb(0 123 255 / 10%); box-shadow: 0px 0px 4px 2px #d8e3ef; border-radius:20px; margin-top:30px; margin-left:20px; margin-right:20px;  ">
 
         <div style="font-size: 35px; align-items:center;"> <strong>PARiKSHA</strong> - Quiz Heading </div>
 
@@ -186,28 +230,22 @@
 
 <form method="POST">
     {% for ques in shuffled_questions %}
-    <div class='jumbotron'
-        style="margin-top: 50px;   padding:20px; background-color:rgba(128, 128, 128, 0.116); border-radius:20px;">
-
-        <div class="container"
-            style="background-color:plum;  margin-top:10px; border-radius:20px; padding:35px; margin-top:5px;">
-            <h2>Q : {{ques}}</h2>
+    <div class='jumbotron questionJumbo mx-auto'>
+        <div class="row mx-3"
+            style="margin-top:10px; border-radius:20px; padding:10px;">
+            <h4>Q : {{ques}}</h4>
 
         </div>
 
-
-
-
-        <div class="container" style="padding:10px; margin-top:20px; border-radius:20px; background-color:lightpink;">
+        <div class="ansBox mx-3">
 
             {% for opts in questions[ques] %}
 
-            <div style="margin-top: 25px; padding:10px;">
+            <div style="margin-top: 1rem;">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input class="form-check-input" type="radio" value="{{opts}}" name="{{ques}}">
-                    <label class="form-check-label" for="radio" style="margin-left: 30px; font-size:x-large;">
-
-                        <span id="male" )></span>
+                    <input class="form-check-input checkInput" type="radio" value="{{opts}}" name="{{ques}}">
+                    <label class="form-check-label ansText" for="radio" >
+                        <span id="male"></span>
                         {{opts}}
                     </label>
                 </div>
@@ -222,14 +260,9 @@
     {% endfor %}
     <!-- this input field's postion has to be corrected -->
     <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-6 col-md-4"></div>
-
-            <div class="col-auto" style="padding: 25px;">
-                <input type="submit" value="Submit"
-                    style="padding: 10px; width:200px; background-color:#e43c5c; color:white; font-size:x-large;"
-                    class="zoom" name="submit" id="submit" disabled=true />
-            </div>
+        <div class="row justify-content-center">
+                <input type="submit" value="Submit" class="btn px-4 btn-lg py-3 submitBtn btn-primary"
+                     name="submit" id="submit" disabled=true />
 
 
         </div>
