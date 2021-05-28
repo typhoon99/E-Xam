@@ -35,11 +35,11 @@
   }
   
   a {
-    color: #e43c5c;
+    color: #525252;
   }
   
   a:hover {
-    color: #ea6981;
+    color: #525252;
     text-decoration: none;
   }
   
@@ -139,7 +139,7 @@
   .nav-menu a {
     display: block;
     position: relative;
-    color: #fff;
+    color: #525252;
     transition: 0.3s;
     font-size: 15px;
     padding: 0 4px;
@@ -358,14 +358,14 @@
   #hero {
     width: 100%;
     height: 100vh;
-    background: url("https://t4.ftcdn.net/jpg/03/76/20/23/240_F_376202350_NUCdDVcC4F77c3eE2F6f2wkSyLYKzkwD.jpg") top center;
+    background: url("https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/freeimg_43659769freejpg850.jpg") center;
     background-size: cover;
     position: relative;
   }
   
   #hero:before {
     content: "";
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.246);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -387,12 +387,20 @@
     padding: 0 15px;
   }
   
-  #hero h3 {
+  /* #hero h3 {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 29px;
     padding: 10px 30px;
     margin-bottom: 30px;
+    border-radius: 50px;
+  } */
+
+  #hero h3 {
+    color: #fff;
+    font-size: 29px;
+    padding: 10px 30px;
+  
     border-radius: 50px;
   }
   
@@ -425,8 +433,9 @@
   }
   
   #hero .btn-get-started:hover {
-    background: #e43c5c;
-    border: 2px solid #e43c5c;
+    background: #fafafa;
+    border: 2px solid #eeeeee;
+    color: #000;
   }
   
   @media (min-width: 1024px) {
@@ -473,16 +482,15 @@
   }
   
   .section-title h2 {
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 15px;
+    /* letter-spacing: 1px; */
     font-weight: 700;
     padding: 8px 20px;
     line-height: 1;
     margin: 0;
-    background: #fdeff2;
-    color: #e43c5c;
+    background: #572a9a45;
+    color: #150a3d;
     display: inline-block;
-
     border-radius: 50px;
   }
   
@@ -576,18 +584,18 @@
     padding: 60px 30px;
     position: relative;
     overflow: hidden;
-    background: #fff;
     box-shadow: 2px 0 35px 0 rgba(68, 88, 144, 0.12);
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
+    background-size: cover;
     text-align: center;
   }
   
   .services .icon-box::before {
     content: '';
     position: absolute;
-    background: #fdeff2;
+    background: #000000;
     right: 0;
     left: 0;
     bottom: 0;
@@ -597,7 +605,7 @@
   }
   
   .services .icon-box:hover::before {
-    background: #e43c5c;
+    background: #4b0a95;
     top: 0;
     border-radius: 0px;
   }
@@ -620,15 +628,18 @@
   }
   
   .services .title a {
-    color: #111;
+    color: rgb(255, 255, 255);
   }
   
   .services .description {
     font-size: 15px;
     line-height: 28px;
     margin-bottom: 0;
+    color: white;
   }
   
+   
+
   .services .icon-box:hover .title a, .services .icon-box:hover .description {
     color: #fff;
   }
@@ -649,7 +660,12 @@
     align-items: center;
     padding: 20px;
     transition: ease-in-out 0.3s;
-    box-shadow: 2px 0 35px 0 rgba(68, 88, 144, 0.12);
+    box-shadow: 0px 0px 3px 2px rgba(168, 178, 204, 0.12);
+    width: 15rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(184, 184, 214);
+    color: #8787a5!important;
   }
   
   .features .icon-box i {
@@ -672,16 +688,23 @@
   }
   
   .features .icon-box:hover a {
-    color: #e43c5c;
+    color: #fff;
+  }
+
+  .features .icon-box:hover {
+   background-color: #2d73b8f2;
   }
   
   /*--------------------------------------------------------------
   # Cta
   --------------------------------------------------------------*/
   .cta {
-    background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("https://t4.ftcdn.net/jpg/02/70/01/83/240_F_270018379_lLxADADk7RdXnL2L4rzf1oNgmIlHBtan.jpg") center center;
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.8)), url("https://t4.ftcdn.net/jpg/02/70/01/83/240_F_270018379_lLxADADk7RdXnL2L4rzf1oNgmIlHBtan.jpg") center center; */
+background-image: url("https://image.freepik.com/free-vector/dark-wavy-background_23-2148399820.jpg");
+background-position: center;
     background-size: cover;
-    padding: 60px 0;
+    transform: translate3d(1);
+    padding: 4rem 0;
   }
   
   .cta h3 {
@@ -710,8 +733,10 @@
   }
   
   .cta .cta-btn:hover {
-    background: #1C2331;
-    border: 2px solid #1C2331;
+    background: #ffffff;
+    border: 2px solid #f8f8f8;
+    color: black;
+    font-weight: 700;
   }
   
   @media (min-width: 1024px) {
@@ -833,7 +858,7 @@
     font-size: 13px;
     padding: 3px 25px 6px 25px;
     background: #fce6ea;
-    color: #e43c5c;
+    color: #b4b8ea0f;
     border-radius: 50px;
   }
   
@@ -850,13 +875,20 @@
   }
   
   .faq .faq-list li {
-    padding: 0 0 20px 25px;
+    padding: 1rem 3rem;
+    /* border: 1px solid rgb(204, 204, 204); */
+    margin: 2rem;
+    width: 70%;
+    box-shadow: 0px 0px 3px 2px rgba(206, 204, 204, 0.329);
+    border-radius: 0.5rem;
+    height: 30%;
+    background-color: #b4b8ea0f;
   }
   
   .faq .faq-list a {
     display: block;
     position: relative;
-    font-family: #e43c5c;
+    font-family: #4b4b4b;
     font-size: 18px;
     font-weight: 500;
   }
@@ -874,7 +906,7 @@
   }
   
   .faq .faq-list a.collapse {
-    color: #e43c5c;
+    color: #828282;
   }
   
   .faq .faq-list a.collapsed {
@@ -882,12 +914,12 @@
   }
   
   .faq .faq-list a.collapsed:hover {
-    color: #e43c5c;
+    color: #828282;
   }
   
-  .faq .faq-list a.collapsed i::before {
+  /* .faq .faq-list a.collapsed i::before {
     content: "\eab2" !important;
-  }
+  } */
   
   @media (min-width: 1280px) {
     .faq .container {
@@ -980,16 +1012,20 @@
   --------------------------------------------------------------*/
   .contact .info {
     width: 100%;
-    background: #fff;
+    background: rgb(243, 243, 243);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 1px 1px rgb(243, 243, 243);
   }
   
   .contact .info i {
     font-size: 20px;
-    color: #e43c5c;
+    color: #d2c5e4;
     float: left;
     width: 44px;
     height: 44px;
-    background: #fdeff2;
+    background: #d2c5e4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1012,12 +1048,12 @@
     color: #816a6e;
   }
   
-  .contact .info .email, .contact .info .phone {
+  /* .contact .info .email, .contact .info .phone {
     margin-top: 40px;
-  }
+  } */
   
   .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-    background: #e43c5c;
+    background: #a79db6;
     color: #fff;
   }
   
@@ -1173,15 +1209,15 @@
   # Footer
   --------------------------------------------------------------*/
   #footer {
-    color: #444444;
+    color: #f1f1f1;
     font-size: 14px;
-    background: #f6f4f4;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    background-image: url("https://wallpapercave.com/wp/lDHjvPD.jpg");
+    background-size: cover;
   }
   
   #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: #fff;
+    /* background: #fff; */
   }
   
   #footer .footer-top .footer-contact {
@@ -1201,13 +1237,13 @@
     line-height: 24px;
     margin-bottom: 0;
     font-family: "Nunito", sans-serif;
-    color: #777777;
+    color: #fff;
   }
   
   #footer .footer-top h4 {
     font-size: 16px;
     font-weight: bold;
-    color: #444444;
+    color: #fff;
     position: relative;
     padding-bottom: 12px;
   }
@@ -1224,7 +1260,7 @@
   
   #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #ea6981;
+    color: rgb(156, 156, 156);
     font-size: 18px;
     line-height: 1;
   }
@@ -1240,7 +1276,7 @@
   }
   
   #footer .footer-top .footer-links ul a {
-    color: #777777;
+    color: #fff;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
@@ -1248,7 +1284,7 @@
   
   #footer .footer-top .footer-links ul a:hover {
     text-decoration: none;
-    color: #e43c5c;
+    color: rgb(189, 189, 189);
   }
   
   #footer .footer-newsletter {
@@ -1320,13 +1356,18 @@
     text-decoration: none;
   }
   
+
+  .aboutImage{
+      width: 80%;
+      height: 80%;
+  }
 </style>
 <body>
   <section id="hero">
     <div class="hero-container">
-      <h3>Welcome to <strong>PARiKSHA</strong></h3>
+      <h3>Welcome to <strong>E-xam</strong></h3>
       <h1>A solution to online examination</h1>
-      <p><h2 class="px-lg-5 mx-lg-5">Pariksha is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.</h2></p>
+      <p><h2 class="px-lg-5 mx-lg-5">E-xam is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.</h2></p>
       <a href="{{url_for('auth.login')}}" class="btn-get-started scrollto">Login!</a>
     </div>
   </section><!-- End Hero -->
@@ -1334,36 +1375,33 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about pb-0">
       <div class="container">
 
         <div class="section-title">
           <h2>About</h2>
-          <h3>Learn More <span>About </span>PARiKSHA</h3>
+          <h3>Learn More <span style="color: #6b05ad;">About </span>E-xam</h3>
           <p>A handy and unique solution to conduct online examinations and much more with ease.</p>
         </div>
 
         <div class="row content">
           <div class="col-lg-6">
-            <ul>
+            <img class="aboutImage" src="https://image.freepik.com/free-vector/online-learning-concept-illustration_114360-4755.jpg" alt="">
+          </div>
+          <div class="col-lg-6">
+            <ul class="text-muted mt-5 pt-3">
               <li><i class="ri-check-double-line"></i>Schedule and conduct live video monitored exams and quizes using our templates</li>
               <li><i class="ri-check-double-line"></i>Get analytics on class and individual performance</li>
               <li><i class="ri-check-double-line"></i>Use our platform for assignment submission and verification</li>
               <li><i class="ri-check-double-line"></i>Provide students with ungraded question bank based or AI generated exercises</li>
             </ul>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              It is a unified online platform in the form of a website for conducting assessments and taking assignments, storing the responses for grading and automatically producing performance analytics, and extending upon these providing institutions, teachers and students a place to maintain and access results
-            </p>
-            <!--<a href="#" class="btn-learn-more">Learn More</a>-->
-          </div>
         </div>
-
+        
       </div>
     </section><!-- End About Section -->
 
-    <hr class="my-5">
+    <hr>
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -1371,13 +1409,13 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <h3><span>Services </span>offered by PARiKSHA</h3>
+          <h3><span>Services </span>offered by E-xam</h3>
           <p>Various feautres to make the process and conduction of online examination and other activities are offered. They are:</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
+            <div class="icon-box" style="background-image:url('https://media.istockphoto.com/vectors/paper-cut-banners-with-3d-abstract-background-with-blue-waves-and-vector-id1126051357?b=1&k=6&m=1126051357&s=170667a&w=0&h=LtYo-9b9x79qG6HSOhKf8kfYfevYylzFiN5lvCuJGG0=')">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="">Live Exams</a></h4>
               <p class="description">Conduction of live video monitored exams using AI proctoring</p>
@@ -1385,7 +1423,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
+            <div class="icon-box" style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-dark-purple-line-business-image_39971.jpg');">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4 class="title"><a href="">Available Templates</a></h4>
               <p class="description">Create tests using our templates - multiple choice questions, subjective questions</p>
@@ -1393,7 +1431,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
+            <div class="icon-box" style="background-image:url('https://png.pngtree.com/thumb_back/fw800/background/20210115/pngtree-dark-blue-gradient-light-effect-vector-geometric-cascading-background-image_528191.jpg')" >
               <div class="icon"><i class="bx bx-tachometer"></i></div>
               <h4 class="title"><a href="">Analytics on performance</a></h4>
               <p class="description">Get detailes analytics on class and individual performances</p>
@@ -1401,7 +1439,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box">
+            <div class="icon-box" style="background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210121/pngtree-dark-blue-gradient-background-abstract-wave-line-gradient-image_538136.jpg');">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4 class="title"><a href="">Submission and Verification</a></h4>
               <p class="description">Use our platform for assignment submission and verification by plagiarism - detector services</p>
@@ -1478,7 +1516,7 @@
       <div class="container">
 
         <div class="text-center">
-          <h3>Not  joined Pariksha? <span>Join now</span></h3>
+          <h3> Join now</h3>
           <p> Students will be able to use our platform from laptops, smartphones, and tablets to give the tests or submit assignments and view results among other things</p>
           <a class="cta-btn" href="{{url_for('auth.register')}}">Register Now!</a>
         </div>
@@ -1490,7 +1528,7 @@
     
     <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq">
-      <div class="container">
+      <div class="container justify-content-center">
 
         <div class="section-title">
           <h2>F.A.Q</h2>
@@ -1500,25 +1538,25 @@
         <ul class="faq-list">
 
           <li>
-            <a data-toggle="collapse" class="" href="#faq1">What is <strong>PARiKSHA</strong>? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" class="" href="#faq1">What is <strong>E-xam</strong>? <i class="fa fa-chevron-down"></i></a>
             <div id="faq1" class="collapse show" data-parent=".faq-list">
               <p>
-                PARiKSHA is a online assement programs using A.I for quality assement of users.
+                E-xam is a online assement programs using A.I for quality assement of users.
               </p>
             </div>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq2" class="collapsed">Is <strong>PARiKSHA</strong> only limited to assessments? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">Is <strong>E-xam</strong> only limited to assessments?<i class="fa fa-chevron-down"></i></a>
             <div id="faq2" class="collapse" data-parent=".faq-list">
               <p>
-                No, <strong>PARiKSHA</strong> mainly focusses on assessments but is not limited to it by providing other features regarding assingement submission.
+                No, <strong>E-xam</strong> mainly focusses on assessments but is not limited to it by providing other features regarding assingement submission.
               </p>
             </div>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq3" class="collapsed">Do I need to install something before using <strong>PARiKSHA</strong> ? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">Do I need to install something before using <strong>E-xam</strong> ?<i class="fa fa-chevron-down"></i></a>
             <div id="faq3" class="collapse" data-parent=".faq-list">
               <p>
               Nope, you do not have to worry about all that. 
@@ -1527,28 +1565,28 @@
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq4" class="collapsed">Is PARiKSHA free? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">Is E-xam free? <i class="fa fa-chevron-down"></i></a>
             <div id="faq4" class="collapse" data-parent=".faq-list">
               <p>
-                Yes,PARiKSHA is free to use. With all its features.
+                Yes,E-xam is free to use. With all its features.
               </p>
             </div>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq5" class="collapsed">Is <strong>PARiKSHA</strong> crashfree ? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" href="#faq5" class="collapsed">Is <strong>E-xam</strong> crashfree ? <i class="fa fa-chevron-down"></i></a>
             <div id="faq5" class="collapse" data-parent=".faq-list">
               <p>
-                The hybid implementation used in PARiKSHA makes the system stable and decreases the chances of crash .
+                The hybid implementation used in E-xam makes the system stable and decreases the chances of crash .
               </p>
             </div>
           </li>
 
           <li>
-            <a data-toggle="collapse" href="#faq6" class="collapsed">What all question types does the quiz feature in <strong>PARiKSHA</strong> support ? <i class="icofont-simple-up"></i></a>
+            <a data-toggle="collapse" href="#faq6" class="collapsed">What all question types does the quiz feature in <strong>E-xam</strong> support ?<i class="fa fa-chevron-down"></i></a>
             <div id="faq6" class="collapse" data-parent=".faq-list">
               <p>
-              For the moment PARiKSHA only supports MCQ type of questions but the support for other types would be added very soon.  
+              For the moment E-xam only supports MCQ type of questions but the support for other types would be added very soon.  
               </p>
             </div>
           </li>
@@ -1558,7 +1596,7 @@
       </div>
     </section><!-- End F.A.Q Section -->
 
-    <hr class="my-5">
+    <hr>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -1566,32 +1604,30 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <h3>Contact <span>Us</span></h3>
+          <h3>Contact <span style="color: indigo;">Us</span></h3>
           <p></p>
         </div>
 
 
-        <div class="row mt-5">
+        <div class="row justify-content-center">
 
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
+          <!-- <div class="col-lg-4"> -->
+            <div class="info  col-lg-5">
+              <div class="address ">
                 <i class="icofont-google-map"></i>
                 <h4>Location:</h4>
                 <p>Bennett University, Greater Noida, 201010</p>
               </div>
-
-              <div class="email">
-                <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>pariksha.contact@gmail.com</p>
-              </div>
-
-              
-
             </div>
 
-          </div>
+            <div class="info col-lg-5">
+              <div class="email  ">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>E-xam.contact@gmail.com</p>
+              </div>
+            </div>
+          <!-- </div> -->
 
           </div>
 
@@ -1602,8 +1638,6 @@
 
   </main><!-- End #main -->
 
-  <hr class="my-5">
-
     <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -1612,13 +1646,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Pariksha</h3>
+            <h3>E-xam</h3>
             <p>
               Bennett University <br>
               Greater Noide, 201010<br>
               India<br><br>
               
-              <strong>Email:</strong> PARiKSHA@gmail.com<br>
+              <strong>Email:</strong> e-xam@gmail.com<br>
             </p>
           </div>
 
@@ -1647,9 +1681,9 @@
           </div>
           
            <div class="col-lg-4 col-md-6">
-            <h2>PARiKSHA</h2>
+            <h2>E-xam</h2>
             <h4><p>
-                Pariksha is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.
+                E-xam is created with a motive of providing a unified platform to students and teachers so that the process of learning and its quality does not reduces in these tough times.
               </p>
             </h4>
             </p>

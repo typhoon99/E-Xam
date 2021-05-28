@@ -203,6 +203,10 @@
     .submitBtn{
         font-size: 1.2rem;
     }
+
+    li{
+        list-style: none;
+    }
 </style>
 <div class="camera-view" id="dragme" draggable="true">
     <video autoplay playsinline muted id="wc" class="cameraBox"></video>
@@ -214,7 +218,7 @@
     <div class='jumbotron'
         style="background-color:rgb(0 123 255 / 10%); box-shadow: 0px 0px 4px 2px #d8e3ef; border-radius:20px; margin-top:30px; margin-left:20px; margin-right:20px;  ">
 
-        <div style="font-size: 35px; align-items:center;"> <strong>PARiKSHA</strong> - Quiz Heading </div>
+        <div style="font-size: 35px; align-items:center;"> <strong>E-xam</strong> - Quiz Heading </div>
 
     </div>
     <!-- <div class="">
@@ -326,39 +330,44 @@
 
 </script>
 </div>
-<footer class="page-footer blue text-center " style="padding: 15px; background-color:rgba(128, 128, 128, 0.199);">
 
+
+<footer class="page-footer blue text-center " style="padding: 15px; position: bottom; left: 0; bottom: 0; width: 100%; background-image: url('https://wallpapercave.com/wp/lDHjvPD.jpg');
+background-size: cover;">
     <!--Footer Links-->
-    <div class="container-fluid" style="padding: 15px;">
-        <div class="row">
+<div class="container-fluid" style="padding: 15px;">
+  <div class="row">
 
-            <!--First column-->
-            <div class="col-md-6">
-                <h5 class="title mb-3">PARiKSHA</h5>
-                <p>
-                    PARiKSHA is created with a motive of providing a unified platform to students and teachers so that
-                    the process of learning and its quality does not reduces in these tough times.
+    <!--First column-->
+    <div class="col-md-7 text-light mx-auto my-3">
+      <h5 class="title mb-3">E-xam</h5>
+      <p class="px-5 mx-5">
+        E-xam is created with a motive of providing a unified platform to students and teachers so that the process
+        of learning and its quality does not reduces in these tough times.
 
-                </p>
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col">
-                <h5 class="title">Contact Us</h5>
-
-                <li><a href="#">Mail</a></li>
-                <p>pariksha.contact@gmail.com</p>
-                <li><a
-                        href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
-                </li>
-
-
-
-            </div>
-            <!--/.Second column-->
-        </div>
+      </p>
     </div>
+    <!--/.First column-->
+
+    <!--Second column-->
+    <div class="col text-light my-3">
+        <h5 class="title text-light ">Contact Us: 12345667</h5>
+        <div class="d-flex justify-content-center">
+          <li><a class=" text-light" href="#">Mail:</a></li>
+          <p class="mx-1">e-xam.contact@gmail.com</p>
+        </div>
+        <li><a class=" text-light"
+            href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
+        </li>
+    </div>
+    <!--/.Second column-->
+  </div>
+</div>
 
 </footer>
+
+
+
+
+
 {% endblock content %}
