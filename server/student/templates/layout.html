@@ -67,7 +67,15 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 19px;
 }
 
+.navbar.scrolled{
+  background-color: #2f0157;
+  transition: background-color 2s;
+}
 
+
+.nav-link,.navbar-brand{
+  color: #fff!important;
+}
     </style>
 
 
@@ -78,8 +86,8 @@ h1, h2, h3, h4, h5, h6 {
     {% endif %}
 </head>
 <header class="site-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#" style="margin-top: 5px;;">
+  <nav class="navbar navbar-expand-md fixed-top" style="color: #fff!important;">
+    <a class="navbar-brand" href="#" style="margin-top: 5px;">
       <img src="https://i.ibb.co/s3GNfVr/PARi-KSHA-Icon-only-white-removebg-preview.png" width="30" height="30" class="d-inline-block align-top" alt="">
       E-xam
     </a>
@@ -129,7 +137,11 @@ h1, h2, h3, h4, h5, h6 {
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 
-
+<script>
+  $(window).scroll(function(){
+	$('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+});
+</script>
 
 </html>
 
