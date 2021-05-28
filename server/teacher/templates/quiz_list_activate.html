@@ -32,6 +32,13 @@
   li{
     list-style: none;
   }
+
+  .quizActivate{
+    
+    border: 1px solid #80808047;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 3px 1px #80808029;
+  }
 </style>
 
 <div class="jumbotron" style="margin-top: 50px; background-color:white;">
@@ -72,50 +79,20 @@
   <div class="jumbotron" style="background-color: white;  height:150px;">
 
     <div class="example hoverable">
-
       <div class="container" >
-        <div class="row" style=" height:0px; padding:0px; font-size:large; margin-top:-30px; border-radius:black solid;">
-          <div class="col" id="po" style="background-color:mistyrose;border-radius:black solid;  ">
-           <!-- blue  <div class="col" id="po" style="background-color:aqua;border-radius:black solid;  ">-->
-           <!-- orange  <div class="col" id="po" style="background-color:coral;border-radius:black solid;  ">-->
-           <!-- shadeinpink <div class="col" id="po" style="background-color:lightpink;border-radius:black solid;  ">-->
-           <!-- shadeinorange  <div class="col" id="po" style="background-color:lightcoral;border-radius:black solid;  ">-->
-
-
-
+        <div class="row quizActivate" style=" padding:0px; font-size:large; margin-top:-30px; border-radius:black solid;">
+          <div class="col " id="po">
             <h4 class="pt-3 pl-2"><strong>Quiz ID : {{quiz.id}} <span class="ml-5 pl-5"> {{quiz.title}}</span></strong>
-            </h4>
-            
-          </div>
-          <div class="col-md-auto" style="background-color:mistyrose; padding:20px;">
-            <!-- shades in same occurrance match the above one here -->
-            <!--<div class="col-md-auto" style="background-color:aqua; padding:20px;">-->
-            <!--<div class="col-md-auto" style="background-color:coral; padding:20px;">-->
-            <!--<div class="col-md-auto" style="background-color:lightpink; padding:20px;">-->
-            <!--<div class="col-md-auto" style="background-color:lightcoral; padding:20px;">-->
-
-              
+            </h4> 
           </div>
           
-
-          
-          <div class="col col-lg-2" style="background-color: mistyrose; padding:20px; ">
-            <!-- Match here also -->
-            <!--<div class="col col-lg-2" style="background-color: aqua; padding:20px; ">-->
-            <!--<div class="col col-lg-2" style="background-color: coral; padding:20px; ">-->
-            <!--<div class="col col-lg-2" style="background-color: lightpink; padding:20px; ">-->
-            <!--<div class="col col-lg-2" style="background-color: lightcoral; padding:20px; ">-->
-                {% if quiz.active %}
-                <div class="example hoverable zoom">
-                    <a type="button" class="btn btn-success" href="{{url_for('teacher.activate_quiz',quiz_id = quiz.id)}}"
-                    style="width: 150px; margin-top:-4px; margin-left:px; background-color:#21a709f8;">Deactivate</a>
-                </div>
+          <div class="col col-lg-2" style="padding:20px; ">
+               {% if quiz.active %}
+                    <a type="button" class="btn btn-primary" href="{{url_for('teacher.activate_quiz',quiz_id = quiz.id)}}"
+                    style="width: 150px;  ">Deactivate</a>
                 {% else %}
-                    <div class="example hoverable zoom">
-                        <a type="button" class="btn btn-success" href="{{url_for('teacher.activate_quiz',quiz_id = quiz.id)}}"
-                        style="width: 150px; margin-top:-4px; margin-left:px; background-color:#e43c5c;">Activate</a>
-                    </div>
-                
+                        <a type="button" class="btn btn-primary" href="{{url_for('teacher.activate_quiz',quiz_id = quiz.id)}}"
+                        style="width: 150px; margin-top:-4px;">Activate</a>
                 {% endif %}
             </div>
         </div>
