@@ -57,6 +57,7 @@ async function init_mobile() {
 	await webcam.setup();
 	console.log("STEP 1 SUCCESS");
 	mobilenet = await loadMobilenet();
+  console.log(mobilenet.summary())
 	tf.tidy(() => mobilenet.predict(webcam.capture()));
 }
 
