@@ -209,8 +209,31 @@
     li{
         list-style: none;
     }
+
+     #webgazerVideoContainer{
+         top: 11%!important;
+         left: 87.8%!important;
+     }
+
+    #webgazerVideoFeed{
+        width: 10rem!important;
+        height: 10rem!important;
+    }
+
+    #webgazerFaceOverlay{
+        position: sticky!important;
+        width: 10rem!important;
+        height: 10rem!important;
+    }
+
+    #webgazerFaceFeedbackBox{
+        top: 10%!important;
+    left: 6%!important;
+    width: 8rem!important;
+    height: 7rem!important;
+    }
 </style>
-<div class="camera-view" id="dragme" draggable="true">
+<div class="camera-view d-none" id="dragme" draggable="true">
     <video autoplay playsinline muted id="wc" height="120" width="210" class="cameraBox"></video>
     <div id="prediction1"></div>
     <!-- <button type="button"> U HE</button> -->
@@ -292,6 +315,7 @@
             title: 'Do you want to start the test?',
             confirmButtonText: `Start Test`,
         }).then((result) => {
+            // $("#webgazerVideoContainer").style("");
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 startPredicting();
@@ -319,13 +343,13 @@
 
     function drop(event) {
         var offset = event.dataTransfer.getData("text/plain").split(',');
-        var dm = document.getElementById('dragme');
+        var dm = document.getElementById('webgazerVideoContainer');
         dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
         dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
         event.preventDefault();
         return false;
     }
-    var dm = document.getElementById('dragme');
+    var dm = document.getElementById('webgazerVideoContainer');
     dm.addEventListener('dragstart', drag_start, false);
     document.body.addEventListener('dragover', drag_over, false);
     document.body.addEventListener('drop', drop, false);
