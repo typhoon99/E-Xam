@@ -9,4 +9,4 @@ Jinja2
 pygal
 flask-socketio
 Flask-Cors
-guinicorn==19.0.0
+gunicorn
