@@ -37,7 +37,7 @@ async function predict() {
 		if (predictionText === "MOBILE detected") {
 			// alert("MOBILE detected");
 			console.log(predictionText);
-      $("div.alert-mobile").remove();
+			$("div.alert-mobile").remove();
 			$.notify(
 				{
 					icon: "fa fa-bell",
@@ -57,7 +57,7 @@ async function predict() {
 					offset: { x: 15, y: 15 },
 					spacing: 10,
 					z_index: 1080,
-					delay: 2500,
+					delay: 5000,
 					timer: 1000,
 					url_target: "_blank",
 					mouse_over: !1,
