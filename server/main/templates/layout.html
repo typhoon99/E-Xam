@@ -23,7 +23,7 @@
   <title>E-xam</title>  
   {% endif %}
   
-  <meta content="" name="descriptison">
+  <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -46,9 +46,7 @@
 .carousel .carousel-inner,
 .carousel .carousel-inner .active,
 .carousel .carousel-inner .carousel-item,
-.view,
-
-body {
+.view,body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
@@ -94,10 +92,9 @@ h1, h2, h3, h4, h5, h6 {
 </style>
 </head>
 
-<header id="header" class="site header">
-  </div>
-</header>
 <body>
+  <header id="header" class="site header">
+  </header>
       <main role="main" >
         
                 {% with messages = get_flashed_messages(with_categories = true ) %}
@@ -114,11 +111,6 @@ h1, h2, h3, h4, h5, h6 {
     </main>
     
 </body>
-
-    
-
-
-
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -129,7 +121,4 @@ h1, h2, h3, h4, h5, h6 {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-
-
-
 </html>
