@@ -87,7 +87,7 @@ function stopPredicting() {
 }
 
 async function init_mobile() {
-  console.log(webcam);
+    //console.log(webcam);
 	await webcam.setup();
 	console.log("STEP 1 SUCCESS");
 	mobilenet = await loadMobilenet();
