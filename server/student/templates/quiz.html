@@ -19,11 +19,11 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.min.js"
         integrity="sha512-CrNI25BFwyQ47q3MiZbfATg0ZoG6zuNh2ANn/WjyqvN4ShWfwPeoCOi9pjmX4DoNioMQ5gPcphKKF+oVz3UjRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script defer src={{ url_for('static',filename='/js/webgazer.js' ) }}></script>
-        <script defer src={{ url_for('static',filename='/js/Mobile/mobile.js' ) }}></script>
-        <script defer src={{ url_for('static',filename='/js/Person/person.js' ) }}></script>
-        <script defer src={{ url_for('static',filename='/js/main.js' ) }}></script>
-    </head>
+    <script defer src={{ url_for('static',filename='/js/webgazer.js' ) }}></script>
+    <script defer src={{ url_for('static',filename='/js/Mobile/mobile.js' ) }}></script>
+    <script defer src={{ url_for('static',filename='/js/Person/person.js' ) }}></script>
+    <script defer src={{ url_for('static',filename='/js/main.js' ) }}></script>
+</head>
 <style>
     .zoom {
 
@@ -118,7 +118,7 @@
     .choose #male .fas:hover {
         animation: manimate 7s;
     } */
-/* 
+    /* 
     @keyframes manimate {
         0% {
             box-shadow: 0 0 0 0 rgb(90, 168, 217)
@@ -169,70 +169,70 @@
             margin: 10px;
     } */
 
-    .questionJumbo{
-    width: 70%;
-      padding:10px;
-      background-color: rgb(241 241 241 / 26%);
-    box-shadow: 0px 0px 4px 2px #e2e2e263;
-    border: 1px solid #ececec99;
+    .questionJumbo {
+        width: 70%;
+        padding: 10px;
+        background-color: rgb(241 241 241 / 26%);
+        box-shadow: 0px 0px 4px 2px #e2e2e263;
+        border: 1px solid #ececec99;
     }
 
     @media (max-width: 575.98px) {
-        .questionJumbo{
+        .questionJumbo {
             width: 100%;
         }
     }
 
-    .ansText{
+    .ansText {
         font-size: 0.8rem;
-        margin-left: 30px!important;
+        margin-left: 30px !important;
         font-size: 1rem;
     }
 
-    .checkInput{
-        width: 1rem!important;
-        height: 1rem!important;
+    .checkInput {
+        width: 1rem !important;
+        height: 1rem !important;
     }
 
     .custom-control {
-        margin-top: 0px!important;
-       padding-left: 0.5rem;
+        margin-top: 0px !important;
+        padding-left: 0.5rem;
     }
 
-    .ansBox{
-        padding:0px 8px 8px 8px;
+    .ansBox {
+        padding: 0px 8px 8px 8px;
 
     }
 
-    .submitBtn{
+    .submitBtn {
         font-size: 1.2rem;
     }
 
-    li{
+    li {
         list-style: none;
     }
 
-     #webgazerVideoContainer{
-         top: 11%!important;
-         left: 87.8%!important;
-     }
-
-    #webgazerVideoFeed{
-        width: 10rem!important;
-        height: 10rem!important;
+    #webgazerVideoContainer {
+        top: 11% !important;
+        left: 87.8% !important;
     }
 
-    #webgazerFaceOverlay{
-        position: sticky!important;
-        width: 10rem!important;
-        height: 10rem!important;
+    #webgazerVideoFeed {
+        width: 10rem !important;
+        height: 10rem !important;
     }
 
-    #webgazerFaceFeedbackBox{
-        top: 10%!important;
-    left: 6%!important;
-    width: 8rem!important;
-    height: 7rem!important;
+    #webgazerFaceOverlay {
+        position: sticky !important;
+        width: 10rem !important;
+        height: 10rem !important;
+    }
+
+    #webgazerFaceFeedbackBox {
+        top: 10% !important;
+        left: 6% !important;
+        width: 8rem !important;
+        height: 7rem !important;
     }
 </style>
 <div class="camera-view" id="dragme" draggable="true">
@@ -261,8 +261,7 @@
 <form method="POST">
     {% for ques in shuffled_questions %}
     <div class='jumbotron questionJumbo mx-auto'>
-        <div class="row mx-3"
-            style="margin-top:10px; border-radius:20px; padding:10px;">
+        <div class="row mx-3" style="margin-top:10px; border-radius:20px; padding:10px;">
             <h4>Q : {{ques}}</h4>
 
         </div>
@@ -274,7 +273,7 @@
             <div style="margin-top: 1rem;">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input class="form-check-input checkInput" type="radio" value="{{opts}}" name="{{ques}}">
-                    <label class="form-check-label ansText" for="radio" >
+                    <label class="form-check-label ansText" for="radio">
                         <span id="male"></span>
                         {{opts}}
                     </label>
@@ -291,8 +290,8 @@
     <!-- this input field's postion has to be corrected -->
     <div class="container">
         <div class="row justify-content-center">
-                <input type="submit" value="Submit" class="btn px-4 btn-lg py-3 submitBtn btn-primary"
-                     name="submit" id="submit"/>
+            <input type="submit" value="Submit" class="btn px-4 btn-lg py-3 submitBtn btn-primary" name="submit"
+                id="submit" />
 
 
         </div>
@@ -312,17 +311,17 @@
         //     startPredicting();
         //     startPredicting2();
         // });
-       Swal.fire({
-			title: "Do you want to start the test?",
-			confirmButtonText: `Start Test`,
-		}).then((result) => {
-			// $("#webgazerVideoContainer").style("");
-			/* Read more about isConfirmed, isDenied below */
-			if (result.isConfirmed) {
-				startPredicting();
-				startPredicting2();
-			}
-		});
+        Swal.fire({
+            title: 'Do you want to start the test?',
+            confirmButtonText: `Start Test`,
+        }).then((result) => {
+            // $("#webgazerVideoContainer").style("");
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                startPredicting();
+                startPredicting2();
+            }
+        })
 
     })
     var question_count = { question_count };
@@ -362,34 +361,38 @@
 <footer class="page-footer blue text-center " style="padding: 15px; position: bottom; left: 0; bottom: 0; width: 100%; background-image: url('https://wallpapercave.com/wp/lDHjvPD.jpg');
 background-size: cover;">
     <!--Footer Links-->
-<div class="container-fluid" style="padding: 15px;">
-  <div class="row">
+    <div class="container-fluid" style="padding: 15px;">
+        <div class="row">
 
-    <!--First column-->
-    <div class="col-md-7 text-light mx-auto my-3">
-      <h5 class="title mb-3">E-xam</h5>
-      <p class="px-5 mx-5">
-        E-xam is created with a motive of providing a unified platform to students and teachers so that the process
-        of learning and its quality does not reduces in these tough times.
+            <!--First column-->
+            <div class="col-md-7 text-light mx-auto my-3">
+                <h5 class="title mb-3">E-xam</h5>
+                <p class="px-5 mx-5">
+                    E-xam is created with a motive of providing a unified platform to students and teachers so that the
+                    process
+                    of learning and its quality does not reduces in these tough times.
 
-      </p>
-    </div>
-    <!--/.First column-->
+                </p>
+            </div>
+            <!--/.First column-->
 
-    <!--Second column-->
-    <div class="col text-light my-3">
-        <h5 class="title text-light ">Contact Us: 12345667</h5>
-        <div class="d-flex justify-content-center">
-          <li><a class=" text-light" href="#">Mail:</a></li>
-          <p class="mx-1">e-xam.contact@gmail.com</p>
+            <!--Second column-->
+            <div class="col text-light my-3">
+                <h5 class="title text-light ">Contact Us: 12345667</h5>
+                <div class="d-flex justify-content-center">
+                    <li><a class=" text-light" href="#">Mail:</a></li>
+                    <p class="mx-1">e-xam.contact@gmail.com</p>
+                </div>
+                <li><a class=" text-light"
+                        href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
+                </li>
+            </div>
+            <!--/.Second column-->
         </div>
         <li><a class=" text-light"
-            href="#">LinkedIn</a>
+            href="https://www.linkedin.com/posts/pulkit-vyas_onlineexamination-onlineeducation-edtech-activity-6716777003296555008-MvzC">LinkedIn</a>
         </li>
     </div>
-    <!--/.Second column-->
-  </div>
-</div>
 
 </footer>
 

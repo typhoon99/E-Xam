@@ -18,40 +18,7 @@ window.onload = async function () {
 					// 	"Looking away from screen"
 					// ); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
 					// console.log(data.y); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-					// alert("Looking Away from Screen");
-					console.log("Looking Away from Screen");
-					$("div.alert-away").remove();
-					$.notify(
-						{
-							icon: "fa fa-bell",
-							title: "Looking Away from Screen!",
-							message:
-								"Cheating detected. You can be disqualified if you don't stop.",
-							url: "",
-						},
-						{
-							element: "body",
-							type: "danger",
-							allow_dismiss: !0,
-							placement: {
-								from: "top",
-								align: "center",
-							},
-							offset: { x: 15, y: 15 },
-							spacing: 10,
-							z_index: 1080,
-							delay: 2500,
-							timer: 1000,
-							url_target: "_blank",
-							mouse_over: !1,
-							animate: {
-								enter: "animated bounceIn",
-								exit: "animated fadeOut",
-							},
-							template:
-								'<div data-notify="container" class="alert alert-away alert-dismissible alert-{0} alert-notify col-6 role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>',
-						}
-					);
+					alert("Looking Away from Screen");
 				}
 				//   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
 			}
