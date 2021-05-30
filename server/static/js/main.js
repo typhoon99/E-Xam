@@ -40,7 +40,7 @@ window.onload = async function () {
 							offset: { x: 15, y: 15 },
 							spacing: 10,
 							z_index: 1080,
-							delay: 2500,
+							delay: 5000,
 							timer: 1000,
 							url_target: "_blank",
 							mouse_over: !1,
