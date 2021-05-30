@@ -6,10 +6,10 @@ window.onload = async function () {
 		//.setTracker('clmtrackr')
 		.setGazeListener(function (data, clock) {
 			if (data !== null && data.x !== undefined && data.y !== undefined) {
-				const start=(window.innerWidth * 15) / 100;
-				const end=(window.innerWidth * 85) / 100;
-				console.log(start)
-				console.log(end)
+				const start=(window.innerWidth * 10) / 100;
+				const end=(window.innerWidth * 90) / 100;
+				// console.log(start)
+				// console.log(end)
 				if (
 					data.x < start ||
 					data.x > end
@@ -18,7 +18,40 @@ window.onload = async function () {
 					// 	"Looking away from screen"
 					// ); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
 					// console.log(data.y); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-					alert("Looking Away from Screen");
+					// alert("Looking Away from Screen");
+					console.log("Looking Away from Screen");
+					$("div.alert-away").remove();
+					$.notify(
+						{
+							icon: "fa fa-bell",
+							title: "Looking Away from Screen!",
+							message:
+								"Cheating detected. You can be disqualified if you don't stop.",
+							url: "",
+						},
+						{
+							element: "body",
+							type: "danger",
+							allow_dismiss: !0,
+							placement: {
+								from: "top",
+								align: "center",
+							},
+							offset: { x: 15, y: 15 },
+							spacing: 10,
+							z_index: 1080,
+							delay: 2500,
+							timer: 1000,
+							url_target: "_blank",
+							mouse_over: !1,
+							animate: {
+								enter: "animated bounceIn",
+								exit: "animated fadeOut",
+							},
+							template:
+								'<div data-notify="container" class="alert alert-away alert-dismissible alert-{0} alert-notify col-6 role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>',
+						}
+					);
 				}
 				//   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
 			}
@@ -35,14 +68,14 @@ window.onload = async function () {
 		); /* Kalman Filter defaults to on. Can be toggled by user. */
 
 	//Set up the webgazer video feedback.
-	var setup = function () {
-		//Set up the main canvas. The main canvas is used to calibrate the webgazer.
-		var canvas = document.getElementById("plotting_canvas");
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-		canvas.style.position = "fixed";
-	};
-	setup();
+	// var setup = function () {
+	// 	//Set up the main canvas. The main canvas is used to calibrate the webgazer.
+	// 	var canvas = document.getElementById("plotting_canvas");
+	// 	canvas.width = window.innerWidth;
+	// 	canvas.height = window.innerHeight;
+	// 	canvas.style.position = "fixed";
+	// };
+	// setup();
 };
 
 // Set to true if you want to save the data even if you reload the page.
@@ -56,7 +89,6 @@ window.onbeforeunload = function () {
  * Restart the calibration process by clearing the local storage and reseting the calibration point
  */
 function Restart() {
-	document.getElementById("Accuracy").innerHTML = "<a>Not yet Calibrated</a>";
 	webgazer.clearData();
 	ClearCalibration();
 	PopUpInstruction();

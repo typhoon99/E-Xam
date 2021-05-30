@@ -1,0 +1,41 @@
+.alert {
+	position: relative;
+	margin-bottom: 1rem;
+	padding: 1rem 1.5rem;
+	border: 1px solid transparent;
+	border-radius: 0.375rem;
+}
+.alert-heading {
+	color: inherit;
+}
+.alert-link {
+	font-weight: 600;
+}
+.alert-dismissible {
+	padding-right: 4.5rem;
+}
+.alert-dismissible .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1rem 1.5rem;
+	color: inherit;
+}
+.alert-danger {
+	color: #fff;
+	border-color: #f75676;
+	background-color: #f75676;
+}
+.alert-danger a {
+	font-weight: 600;
+	color: #ac0829;
+}
+.alert-danger a:hover {
+	color: #fff;
+}
+.alert-danger hr {
+	border-top-color: #f63e62;
+}
+.alert-danger .alert-link {
+	color: #ec0c38;
+}

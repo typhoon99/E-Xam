@@ -13,7 +13,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href={{ url_for('static',filename='/css/alert.css' ) }}>
     <script defer src={{ url_for('static',filename='/js/webcam.js' ) }}></script>
+    <script defer src={{ url_for('static',filename='/js/notify.js' ) }}></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.min.js"
         integrity="sha512-CrNI25BFwyQ47q3MiZbfATg0ZoG6zuNh2ANn/WjyqvN4ShWfwPeoCOi9pjmX4DoNioMQ5gPcphKKF+oVz3UjRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -233,11 +235,10 @@
     height: 7rem!important;
     }
 </style>
-<div class="camera-view d-none" id="dragme" draggable="true">
-    <video autoplay playsinline muted id="wc" height="120" width="210" class="cameraBox"></video>
-    <div id="prediction1"></div>
-    <!-- <button type="button"> U HE</button> -->
-    <div id="prediction2"></div>
+<div class="camera-view" id="dragme" draggable="true">
+    <video autoplay playsinline muted id="wc" style="visibility: hidden;" height="120" width="210" class="cameraBox"></video>
+    <!-- <div id="prediction1"></div>
+    <div id="prediction2"></div> -->
 </div>
 <div class="jumbotron" style="background-color:white; ">
     <div class='jumbotron'
@@ -311,17 +312,17 @@
         //     startPredicting();
         //     startPredicting2();
         // });
-        Swal.fire({
-            title: 'Do you want to start the test?',
-            confirmButtonText: `Start Test`,
-        }).then((result) => {
-            // $("#webgazerVideoContainer").style("");
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                startPredicting();
-                startPredicting2();
-            }
-        })
+       Swal.fire({
+			title: "Do you want to start the test?",
+			confirmButtonText: `Start Test`,
+		}).then((result) => {
+			// $("#webgazerVideoContainer").style("");
+			/* Read more about isConfirmed, isDenied below */
+			if (result.isConfirmed) {
+				startPredicting();
+				startPredicting2();
+			}
+		});
 
     })
     var question_count = { question_count };
