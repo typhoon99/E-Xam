@@ -322,10 +322,32 @@
                 document.documentElement.requestFullscreen();
 				startPredicting();
 				startPredicting2();
+                let count = 0;
+        $(window).blur(function () {
+            console.log(count);
+            count++;
+            if(count>=5)
+            {
+            Swal.fire({
+			title: "Your Test has been submitted due to cheating.",
+			confirmButtonText: `Ok`,
+		}).then((result) => {
+            $("#submit").click();
+        })
+            }
+            else
+            {
+                Swal.fire({
+			title: "Window Navigation detected. Your test will be submitted if you don't stop.",
+			confirmButtonText: `Ok`,
+		});
+            }
+        });
 			}
 		});
 
     })
+    
     var question_count = { question_count };
     $(":radio").change(function () {
         if ($(':radio:checked').length == question_count) {
