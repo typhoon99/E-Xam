@@ -14,6 +14,7 @@ def register():
         if form.validate_on_submit():
             hashed_password = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
             user = User(name = form.name.data, email = form.email.data,password = hashed_password)
+            send_verification_email(user)
             if form.acc_type.data == "Student":
                 student = Student(user = user)
                 db.session.add(user)
@@ -23,7 +24,6 @@ def register():
                 db.session.add(user)
                 db.session.add(teacher)
             db.session.commit()
-            send_verification_email(user)
             flash(f"Account has been created and a verification link has been sent to {form.email.data} !!", 'success')
             return redirect(url_for("auth.login"))
         return render_template("register.html",form = form,title = "Register")
