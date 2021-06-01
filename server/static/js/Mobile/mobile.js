@@ -6,7 +6,7 @@ var mobilePrediction = "Everything alright";
 async function loadMobilenet() {
 	console.log("Model function STEP 2");
 	const mobilenet = await tf.loadLayersModel(
-		"http://127.0.0.1:5000/js/Mobile/model.json"
+		"/js/Mobile/model.json"
 	);
 	console.log("Model loaded");
 	return mobilenet;

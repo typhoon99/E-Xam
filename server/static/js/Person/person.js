@@ -4,7 +4,7 @@ let isPredicting2 = false;
 var personPrediction = 'Single person';
 
 async function loadPersonnet() {
-    const personnet = await tf.loadLayersModel('http://127.0.0.1:5000/js/Person/model2.json');
+    const personnet = await tf.loadLayersModel('/js/Person/model2.json');
     console.log("Model loaded 2");
     return personnet;
 }
